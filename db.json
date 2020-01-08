@@ -1,0 +1,16 @@
+{
+	"getPricing": [
+		{
+			"servicename": "Economic",
+			"servicevalue": "200"
+		},
+		{
+			"servicename": "premium",
+			"servicevalue": "300"
+		},
+		{
+			"servicename": "comprehensive",
+			"servicevalue": "450"
+		}
+	]
+}
