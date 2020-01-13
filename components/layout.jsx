@@ -1,5 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
+import Navbar from './navbar'
 
 export default function (props) {
 	return (
@@ -22,14 +23,9 @@ function Header() {
 <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 <title>GarageInn</title>
-
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 
-{/* <!--     Fonts and icons     --> */}
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons&display=swap" />
-
-{/* <!-- CSS Files --> */}
-<link href="/css/masterStyle.css" rel="stylesheet"/>
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
 		</Head>
 		<Navbar/>
 		</React.Fragment>
