@@ -23,6 +23,10 @@
   },
   "keywords": [],
   "author": "",
+  "contributors": [
+    "Yashraj Mishra (https://crazylilosama.me/)",
+    "Ayush Rawal <ayushrawal12@gmail.com> (https://github.com/Ayush-Rawal)"
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Ayush-Rawal/garageinn/issues"
