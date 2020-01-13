@@ -1,14 +1,15 @@
 import React from 'react'
 import Head from 'next/head'
+import CartWrapper from './cart'
 import Navbar from './navbar'
 
 export default function (props) {
 	return (
-		<React.Fragment>
+		<CartWrapper>
 			<Header/>
 			{props.children}
 			<Footer />
-		</React.Fragment>
+		</CartWrapper>
 
 	)
 }
