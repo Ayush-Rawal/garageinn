@@ -1,6 +1,4 @@
 import Layout from "../components/layout";
-import Grid from "@material-ui/core/Grid"
-import Container from "@material-ui/core/Container"
 
 export default function () {
 	return (
@@ -58,9 +56,9 @@ export default function () {
 			</div>
 
     <div className="page-header header-filter" data-parallax="true" style={{backgroundImage: "url('/Img/stock_photo.jpg')"}}>
-		<Container className="container">
-			<Grid container>
-				<Grid item>
+		<div className="container">
+			<div container>
+				<div item>
 				<h1 className="title">Your Story Starts With Us</h1>
                     <h4>Every landing page needs a small description after the big bold title, that's why we added this text here. Add here all the information that can make you or your product create the first impression.</h4>
                     <br />
@@ -71,9 +69,9 @@ export default function () {
 							<i className="fa fa-car"></i>  Book
 					</a>
 
-				</Grid>
-			</Grid>
-		</Container>
+				</div>
+			</div>
+		</div>
         {/* <div className="container">
             <div className="row">
 				<div className="col-md-8 col-md-offset-2">

@@ -1,62 +1,67 @@
 import React, { useState, Fragment, useEffect } from 'react'
 import Layout from '../components/layout'
-import {
-	Card, CardActionArea, CardActions, 
-	CardContent, CardMedia, Button,
-	Typography
-} from '@material-ui/core';
-import {Clear, Check, AddShoppingCart} from "@material-ui/icons"
+import api from "../utils/api"
 
 export default function services() {
-	[pricings, setPricings] = useState({})
+	let [pricings, setPricings] = useState([{name: "Loading Plan"}, {name: "Loading Plan"}, {name: "Loading Plan"}])
 	useEffect(fetchPricing)
 	return (
 		<Layout>
 			{!Object.keys(pricings).length && PricingLoader()}
-			{Object.keys(pricings).length && pricings.map(el => PricingCard(el))}
-			<ServiceCard image="" heading="" body=""/>
-			<ServiceCard image="" heading="" body=""/>
-			<ServiceCard image="" heading="" body=""/>
-			<ServiceCard image="" heading="" body=""/>
+			{Object.keys(pricings).length && 
+				<div container spacing={5}>
+					{pricings.map(el => (
+						<div item>
+							{PricingCard(el)}
+						</div>	
+					))}
+				</div>
+			
+			}
+			<div>
+				<ServiceCard image="/poor_people.png" heading="asdasd" body="asdasda"/>
+				<ServiceCard image="/poor_people.png" heading="asdsad" body="asdasda"/>
+				<ServiceCard image="/poor_people.png" heading="sadasd" body="asdasda"/>
+				<ServiceCard image="/poor_people.png" heading="sadasd" body="asdasda"/>
+			</div>
 		</Layout>
 	)
 	
 	function fetchPricing(cart) {
-		const data = api.get("/services")
-		console.log(data)
-		return data
+		api.get("/getPricing")
+		.then(res => {
+			setPricings(res.data)
+		})
 	}
 }
 
-
 function PricingCard(plan) {
+	let classes = {}
 	return (
-		<Card>
-			<CardActionArea>
-				<CardContent>
-					<Typography component="h3">
+		<div className={classes.card}>
+			<div>
+				<div>
+					<p>
 						{plan.name}
-					</Typography>
-					<Typography gutterBottom variant="h5" component="p">
+					</p>
+					<p gutterBottom >
 						{plan.pricing}
-					</Typography>
-					{plan.features.map(el => (
-						<Fragment>
-						el.icon === "check" && <Check />
-						el.icon === "cross" && <Clear />
-						<Typography>
-							{el.content}
-						</Typography>
-						</Fragment>
-					))}
-				</CardContent>
-			</CardActionArea>
-			<CardActions>
-				<Button size="small">
+					</p>
+					
+						<div>
+						{/* <Clear /> */}
+						<p>
+							Lele
+							</p>
+						</div>
+				</div>
+			</div>
+			<div>
+				<button size="small">
 					Add to Cart
-				</Button>
-			</CardActions>
-		</Card>
+				</button>
+			</div>
+		</div>
 	)
 }
 
@@ -68,31 +73,23 @@ function PricingLoader() {
 
 function ServiceCard(props) {
 	return (
-		<Card>
-			<CardActionArea>
-				<CardMedia
-				 component="img"
-				 alt={props.heading}
-				//  height="140"
-				 image={props.image}
-				 title={props.heading} 
-				/>
-
-				<CardContent>
-					<Typography gutterBottom variant="h5" component="h2">
+		<div>
+			<div>
+				<div>
+					<p gutterBottom variant="h5" component="h2">
 						{props.heading}
-					</Typography>
-					<Typography variant="body2" color="textSecondary" component="p">
+					</p>
+					<p variant="body2" color="textSecondary" component="p">
 						{props.body}
-					</Typography>
-				</CardContent>
-			</CardActionArea>
-			<CardActions>
-				<Button size="large">
+					</p>
+				</div>
+			</div>
+			<div>
+				<button size="large">
 					<AddShoppingCart/>
 					Add to Cart
-					</Button>
-			</CardActions>
-		</Card>
+					</button>
+			</div>
+		</div>
 	)
 }
