@@ -38,18 +38,18 @@ function Header() {
 
 function Footer() {
 	return (
-		<footer class="footer footer-black footer-big">
-		<div class="container">
+		<footer className="footer footer-black footer-big">
+		<div className="container">
 
-			<div class="content">
-				<div class="row">
-					<div class="col-md-6">
+			<div className="content">
+				<div className="row">
+					<div className="col-md-6">
 						<h5>About Us</h5>
 						<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui, neque doloremque eligendi eaque at fuga unde atque alias quasi a! Sequi tenetur culpa cum, natus sit fugiat iste qui ipsum?</p>
 					</div>
 
 					
-					<div class="col-md-6">
+					<div className="col-md-6">
 						<h5>Contact Us</h5>
 						<p><b>Call:</b><a href="tel:8648008002"> +91 8648008002</a></p>
 						<p><b>Mail:</b><a href="mailto:info@garagein.in"> info@garagein.in</a></p>
@@ -62,7 +62,7 @@ function Footer() {
 
 			<hr />
 
-			<ul class="pull-left">
+			<ul className="pull-left">
 				<li>
 					<a>
 					   Privacy Policy
@@ -76,7 +76,7 @@ function Footer() {
 				
 			</ul>
 
-			<div class="copyright pull-right">
+			<div className="copyright pull-right">
 				Copyright &copy; <script>document.write(new Date().getFullYear())</script> GarageInn.
 			</div>
 		</div>
