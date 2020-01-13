@@ -1,10 +1,11 @@
 import axios from 'axios'
 
 const api = axios.create({
-	baseURL: 'http://localhost:3001',
+	// Your ngrok or hotel url that redirects to jsonserver
+	baseURL: 'http://ea28f699.ngrok.io',
 
-	transformResponse: function (response) {
-		return response.data
-	}
+	// transformResponse: function (response) {
+	// 	return response.data
+	// }
 })
 module.exports = api
